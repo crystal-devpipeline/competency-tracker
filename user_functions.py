@@ -1,4 +1,5 @@
 from competency_tracker_database import cursor
+from competency_tracker_database import connection
 
 def show_user_menu(user_id):
     prompt= """User Menu
@@ -57,7 +58,7 @@ def print_user_row(user_row):
     print(f"{'First Name':<15}{'Last Name':<16}{'Email':<25}{'Phone':<20}{'Password':<20}")
     print(f"{user_row[0]:<15}{user_row[1]:<16}{user_row[2]:<25}{user_row[3]:<20}{'********'<20}")
 
-print_user_row()
+    print_user_row()
 
     cursor.execute(select_sql)
     user_row = cursor.fetchone()
